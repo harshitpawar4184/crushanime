@@ -1,0 +1,19 @@
+{
+  "name": "crushanime",
+  "version": "1.0.0",
+  "description": "CrushAnime - Best Site to Download Anime in Hindi Dubbed & Dual Audio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "anime",
+    "hindi-dubbed",
+    "dual-audio"
+  ],
+  "author": "harshitpawar4184",
+  "license": "ISC",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.14"
+  }
+}
