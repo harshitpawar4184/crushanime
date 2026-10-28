@@ -1,0 +1,28 @@
+{
+  "name": "crushanime",
+  "version": "1.0.0",
+  "description": "CrushAnime - Best Site to Download Anime in Hindi Dubbed & Dual Audio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harshitpawar4184/crushanime.git"
+  },
+  "keywords": [
+    "anime",
+    "crushanime",
+    "hindi-dubbed",
+    "dual-audio"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harshitpawar4184/crushanime/issues"
+  },
+  "homepage": "https://github.com/harshitpawar4184/crushanime#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
