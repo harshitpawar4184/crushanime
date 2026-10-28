@@ -189,7 +189,7 @@
     }
 
     // 2. Save or Update Episode in LocalStorage
-    function adminSavePost() {
+    async function adminSavePost() {
       const id = Number(document.getElementById('adm-id').value || Date.now());
       const title = document.getElementById('adm-title').value.trim();
       const poster = document.getElementById('adm-poster').value.trim() || createSvgPoster(title, '#0284c7');
@@ -261,7 +261,7 @@
         });
       }
 
-      saveAdminDatabase(db);
+      await saveAdminDatabase(db);
       renderAdminList();
       alert(`✅ Saved "${title}" - Episode ${epNumber}!`);
     }
@@ -351,28 +351,28 @@
     }
 
     // 5. Delete Single Episode OR Entire Anime
-    function deleteSingleEpisode(animeId, epNum) {
+    async function deleteSingleEpisode(animeId, epNum) {
       if (!confirm(`Delete Episode ${epNum}?`)) return;
       const db = getAdminSavedAnime();
       const idx = db.findIndex(a => Number(a.id) === Number(animeId));
       if (idx > -1) {
         db[idx].episodes = (db[idx].episodes || []).filter(e => String(e.epNumber) !== String(epNum));
-        saveAdminDatabase(db);
-        renderAdminList();
+        await saveAdminDatabase(db);
+        await renderAdminList();
       }
     }
 
-    function deleteEntireAnime(animeId) {
+    async function deleteEntireAnime(animeId) {
       if (!confirm('Delete this entire Anime and all its episodes?')) return;
       const db = getAdminSavedAnime().filter(a => Number(a.id) !== Number(animeId));
-      saveAdminDatabase(db);
-      renderAdminList();
+      await saveAdminDatabase(db);
+      await renderAdminList();
     }
 
     function deleteAllCustomAnime() {
       if (!confirm('Clear all custom uploaded anime from Admin storage?')) return;
-      saveAdminDatabase([]);
-      renderAdminList();
+      await saveAdminDatabase([]);
+      await renderAdminList();
     }
 
     function clearAdminForm() {
